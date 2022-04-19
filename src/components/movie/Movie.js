@@ -13,15 +13,55 @@ const Movie = () => {
           `https://api.themoviedb.org/3/movie/${movieID}?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`
         );
         console.log(response.data);
+        setMovie(response.data);
       } catch (error) {
         console.log(error);
       }
     };
+
     getMovie();
   }, [movieID]);
+  const {
+    original_title,
+    overview,
+    poster_path,
+    backdrop_path,
+    release_date,
+    tagline,
+  } = movie;
+
+  const customStyles = {
+    backgroundImage: `url(https://image.tmdb.org/t/p/w500/${backdrop_path})`,
+  };
+  console.log(backdrop_path);
   return (
-    <div className="mt-48">
-      this is the movie component width movie ID:{movieID}
+    <div className="mt-28">
+      <div
+        style={customStyles}
+        className="main-container w-[98%] bg-no-repeat  bg-cover"
+      >
+        <div className=" flex items-center justify-evenly  mx-auto   bg-black opacity-[0.8] ">
+          <div className="image-container ml-12 ">
+            <img
+              className="w-[300px] max-w-none"
+              src={`https://image.tmdb.org/t/p/w300/${poster_path}`}
+              alt={original_title}
+            />
+          </div>
+          <div className="details ml-4 h-[95%] p-24">
+            <h2 className="text-6xl font-extrabold my-14  ">
+              {original_title}
+            </h2>
+            <p className="text-3xl font-bold my-5 ">
+              <span>Release Date :</span> {release_date}
+            </p>
+            <p className="text-3xl text-red-300 font-extrabold my-5 ">
+              {tagline}
+            </p>
+            <p className="text-2xl font-bold leading-10">{overview}</p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

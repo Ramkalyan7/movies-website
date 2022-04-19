@@ -19,8 +19,8 @@ const MovieType = () => {
 
   return (
     <div className="py-24">
-      <h1 className="text-center my-9 font-bold text-6xl font-sans">
-        {heading}
+      <h1 className="text-center my-9 font-bold text-4xl font-sans">
+        {heading} Movies
       </h1>
       <div className=" flex flex-wrap items-center justify-around">
         {movies?.map(({ poster_path, id }) => {

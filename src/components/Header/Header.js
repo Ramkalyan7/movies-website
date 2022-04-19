@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import "./Header.css";
 const index = Math.floor(Math.random() * 20);
 
 const Header = () => {
@@ -20,15 +19,23 @@ const Header = () => {
   };
 
   return (
-    <div className="header" style={customStyles}>
-      <div className="mx-28 my-auto text-left">
-        <h1 className="text-[5.7rem] text-red-600 font-extrabold">
-          Welcome to Netflix
-        </h1>
-        <p className="text-3xl font-bold my-7">
-          Watch world's most popular movies of all genres.Seach the movie you
-          want. Get all the details of the movie you want .
-        </p>
+    <div className="w-[99%]">
+      <div
+        className="header bg-no-repeat bg-cover mt-8  w-[100%] mx-auto"
+        style={customStyles}
+      >
+        <div
+          className="m-auto text-left py-36 w-[100%] h-[95%]  px-10 bg-black box-border
+        opacity-[0.7]"
+        >
+          <h1 className="text-[5.7rem] text-red-600 font-extrabold">
+            Welcome to Netflix
+          </h1>
+          <p className="text-3xl font-bold my-7 w-[80%]">
+            Watch world's most popular movies of all genres.Seach the movie you
+            want. Get all the details of the movie you want .
+          </p>
+        </div>
       </div>
     </div>
   );

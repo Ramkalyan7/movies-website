@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../Assets/logo.jpg";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import "../index.css";
 
 const Navbar = () => {
   return (
@@ -9,9 +10,9 @@ const Navbar = () => {
         <ul className="flex justify-between items-center">
           <div>
             <li className="mx-5">
-              <Link to="/">
+              <NavLink className="text-lg" to="/">
                 <img src={Logo} alt="logo" className="w-[180px]" />
-              </Link>
+              </NavLink>
             </li>
           </div>
           <div className="w-[16%] ">
@@ -22,21 +23,31 @@ const Navbar = () => {
             />
           </div>
           <div className="flex justify-evenly items-center">
-            <li className="mx-5 font-bold hover:border-b-2 hover:border-white  ">
-              <Link to="/">Home</Link>
+            <li className="mx-5 font-bold hover:border-b-2 hover:border-white text-gray-300 ">
+              <NavLink className="text-lg" to="/">
+                Home
+              </NavLink>
             </li>
 
-            <li className="mx-5 font-bold hover:border-b-2 hover:border-white  ">
-              <Link to="/movie/Popular">Popular</Link>
+            <li className="mx-5 font-bold hover:border-b-2 hover:border-white text-gray-300 ">
+              <NavLink className="text-lg" to="/movie/Popular">
+                Popular
+              </NavLink>
             </li>
-            <li className="mx-5 font-bold hover:border-b-2 hover:border-white  ">
-              <Link to="/movie/Now_Playing">Now Playing</Link>
+            <li className="mx-5 font-bold hover:border-b-2 hover:border-white text-gray-300 ">
+              <NavLink className="text-lg" to="/movie/Now_Playing">
+                Now Playing
+              </NavLink>
             </li>
-            <li className="mx-5 font-bold hover:border-b-2 hover:border-white  ">
-              <Link to="/movie/Upcoming">Upcoming</Link>
+            <li className="mx-5 font-bold hover:border-b-2 hover:border-white text-gray-300 ">
+              <NavLink className="text-lg" to="/movie/Upcoming">
+                Upcoming
+              </NavLink>
             </li>
-            <li className="mx-5 font-bold hover:border-b-2 hover:border-white  ">
-              <Link to="/movie/Top_Rated">Top Rated</Link>
+            <li className="mx-5 font-bold hover:border-b-2 hover:border-white text-gray-300 ">
+              <NavLink className="text-lg" to="/movie/Top_Rated">
+                Top Rated
+              </NavLink>
             </li>
           </div>
         </ul>
