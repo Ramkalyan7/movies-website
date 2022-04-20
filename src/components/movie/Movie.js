@@ -1,8 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Outlet, useParams, Link } from "react-router-dom";
 import Cast from "./cast/Cast";
 import Recommended from "./simmovies.js/Recommended";
+import { FaPlay } from "react-icons/fa";
 
 const Movie = () => {
   const [movie, setMovie] = useState({});
@@ -41,12 +42,14 @@ const Movie = () => {
     backgroundImage: `url(https://image.tmdb.org/t/p/w500/${backdrop_path})`,
   };
   return (
-    <div className="mt-14">
+    <div className="mt-[5.5rem]">
+      <Outlet />
+
       <div
         style={customStyles}
         className="main-container w-[100%] bg-no-repeat  bg-cover mx-auto"
       >
-        <div className=" flex items-center justify-evenly  mx-auto   bg-gray-800 opacity-[0.8] ">
+        <div className=" flex items-center justify-evenly  mx-auto   bg-gray-800 opacity-[0.95] ">
           <div className="image-container ml-12 ">
             <img
               className="w-[300px] max-w-none"
@@ -55,16 +58,24 @@ const Movie = () => {
             />
           </div>
           <div className="details ml-4 h-[95%] p-24">
-            <h2 className="text-6xl font-extrabold my-14  ">
+            <h2 className="text-6xl font-extrabold my-14 text-red-700 ">
               {original_title}
             </h2>
             <p className="text-3xl font-bold my-5 ">
               <span>Release Date :</span> {release_date}
             </p>
             <p className="text-3xl text-red-300 font-extrabold my-5 ">
-              {tagline}
+              "{tagline}"
             </p>
             <p className="text-2xl font-bold leading-10">{overview}</p>
+            <div className="button my-8">
+              <Link
+                to={`/moviedetails/${movieID}/trailer`}
+                className="bg-red-700 hover:bg-red-500 active:bg-red-900 text-white text-center font-extrabold text-xl px-4 py-2  rounded-sm"
+              >
+                <FaPlay className="inline-block pb-[5px]" /> Trailer
+              </Link>
+            </div>
           </div>
         </div>
       </div>
