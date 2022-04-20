@@ -3,7 +3,7 @@ import Image from "./Image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Logo from "../Assets/logo.jpg";
+import Logo from "../Assets/logo2.png";
 import axios from "axios";
 import { Link } from "react-router-dom";
 

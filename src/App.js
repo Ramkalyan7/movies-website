@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import MovieType from "./components/MovieType";
 import { Route, Routes } from "react-router-dom";
 import Movie from "./components/movie/Movie";
+import Person from "./components/movie/CastDetails/Person";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<Movies />} />
         <Route path="/movie/:type" element={<MovieType />} />
         <Route path="/moviedetails/:movieID" element={<Movie />} />
+        <Route path="/castdetails/:castID" element={<Person />} />
       </Routes>
     </div>
   );

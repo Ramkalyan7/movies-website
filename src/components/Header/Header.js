@@ -19,14 +19,14 @@ const Header = () => {
   };
 
   return (
-    <div className="w-[99%]">
+    <div className="w-[90%] mx-auto mt-28">
       <div
-        className="header bg-no-repeat bg-cover mt-8  w-[100%] mx-auto"
+        className="header bg-no-repeat bg-cover w-[100%] mx-auto"
         style={customStyles}
       >
         <div
-          className="m-auto text-left py-36 w-[100%] h-[95%]  px-10 bg-black box-border
-        opacity-[0.7]"
+          className="m-auto text-left py-24 w-[100%] h-[95%]  px-10 bg-gray-800 box-border
+        opacity-[0.8]"
         >
           <h1 className="text-[5.7rem] text-red-600 font-extrabold">
             Welcome to Netflix
