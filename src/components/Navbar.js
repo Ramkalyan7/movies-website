@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <div className="fixed top-0 left-0 right-0 z-[2] bg-black border-b-2 border-red-900">
       <nav>
-        <ul className="flex justify-between items-center">
+        <ul className="flex justify-between items-center px-5">
           <div>
             <li className="mx-5">
               <NavLink className="text-lg" to="/">
@@ -15,13 +15,7 @@ const Navbar = () => {
               </NavLink>
             </li>
           </div>
-          <div className="w-[16%] ">
-            <input
-              type="text"
-              placeholder="Search"
-              className="px-3 py-2 w-[100%]  rounded-lg outline-none text-black"
-            />
-          </div>
+
           <div className="flex justify-evenly items-center">
             <li className="mx-5 font-bold hover:border-b-2 hover:border-white text-gray-300 ">
               <NavLink className="text-lg" to="/">
@@ -47,6 +41,11 @@ const Navbar = () => {
             <li className="mx-5 font-bold hover:border-b-2 hover:border-white text-gray-300 ">
               <NavLink className="text-lg" to="/movie/Top_Rated">
                 Top Rated
+              </NavLink>
+            </li>
+            <li className="mx-5 font-bold hover:border-b-2 hover:border-white text-gray-300 ">
+              <NavLink className="text-lg" to="/search/sherlock">
+                Search
               </NavLink>
             </li>
           </div>

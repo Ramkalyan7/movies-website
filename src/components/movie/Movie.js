@@ -57,17 +57,17 @@ const Movie = () => {
               alt={original_title}
             />
           </div>
-          <div className="details ml-4 h-[95%] p-24">
-            <h2 className="text-6xl font-extrabold my-14 text-red-700 ">
+          <div className="details ml-4 h-[95%] px-24 py-0">
+            <h2 className="text-6xl font-extrabold mb-10 mt-8 text-red-700 ">
               {original_title}
             </h2>
             <p className="text-3xl font-bold my-5 ">
               <span>Release Date :</span> {release_date}
             </p>
             <p className="text-3xl text-red-300 font-extrabold my-5 ">
-              "{tagline}"
+              "{tagline ? tagline : "no tagline"}"
             </p>
-            <p className="text-2xl font-bold leading-10">{overview}</p>
+            <p className="text-xl font-bold leading-10">{overview}</p>
             <div className="button my-8">
               <Link
                 to={`/moviedetails/${movieID}/trailer`}

@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import Logo from "../../../Assets/logo2.png";
 const Person = () => {
   const { castID } = useParams();
-  console.log(castID);
 
   const [person, setPerson] = useState({});
 

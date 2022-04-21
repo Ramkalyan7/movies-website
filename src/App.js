@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import Movie from "./components/movie/Movie";
 import Person from "./components/movie/CastDetails/Person";
 import Trailer from "./components/movie/video/Trailer";
+import Search from "./components/Search/Search";
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
           <Route path="trailer" element={<Trailer />} />
         </Route>
         <Route path="/castdetails/:castID" element={<Person />} />
+        <Route path="/search/:query" element={<Search />} />
+        <Route path="/search/" element={<Search />} />
       </Routes>
     </div>
   );
