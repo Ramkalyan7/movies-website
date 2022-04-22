@@ -23,30 +23,49 @@ const Cast = ({ movie_ID }) => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 6,
           slidesToScroll: 1,
           infinite: true,
           dots: true,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 900,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 5,
           slidesToScroll: 1,
-          initialSlide: 2,
+          dots: false,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 750,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 4,
           slidesToScroll: 1,
+          dots: false,
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          dots: false,
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 450,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: false,
+          arrows: false,
         },
       },
     ],
   };
-
   const [casts, setCasts] = useState([]);
   useEffect(() => {
     const getCast = async () => {
@@ -66,10 +85,12 @@ const Cast = ({ movie_ID }) => {
 
   return casts.length > 10 ? (
     <div>
-      <div className="my-14">
-        <h1 className="my-5 ml-20 text-4xl font-extrabold">Cast</h1>
+      <div className="mb-6">
+        <h1 className="sm:ml-14 ml-5  my-8  font-bold lg:text-4xl text-[1.5rem]">
+          Cast
+        </h1>
 
-        <div className=" w-[100%] px-8">
+        <div className=" sm:px-8">
           <Slider {...settings}>
             {casts?.map((cast) => {
               return (

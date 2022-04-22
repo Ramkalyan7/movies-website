@@ -25,25 +25,45 @@ const Row = ({ id, genreName }) => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 6,
           slidesToScroll: 1,
           infinite: true,
           dots: true,
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 900,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 5,
           slidesToScroll: 1,
-          initialSlide: 2,
+          dots: false,
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 750,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 4,
           slidesToScroll: 1,
+          dots: false,
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          dots: false,
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 450,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: false,
+          arrows: false,
         },
       },
     ],
@@ -59,10 +79,12 @@ const Row = ({ id, genreName }) => {
     getData();
   }, [id]);
   return (
-    <div>
-      <h1 className="ml-14 mt-20 mb-8 font-bold text-4xl">{genreName}</h1>
+    <div className="mb-6">
+      <h1 className="sm:ml-14 ml-5  my-8  font-bold sm:text-4xl text-[2rem]">
+        {genreName}
+      </h1>
 
-      <div className=" w-[100%] px-8">
+      <div className="  sm:px-8  ">
         <Slider {...settings}>
           {movies.map((movie) => {
             return (

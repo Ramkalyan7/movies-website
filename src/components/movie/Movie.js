@@ -46,17 +46,17 @@ const Movie = () => {
       : bg,
   };
   return (
-    <div className="mt-[5.5rem]">
+    <div className="md:mt-[5.5rem] mt-[69px]">
       <Outlet />
 
       <div
         style={customStyles}
-        className="main-container w-[100%] bg-no-repeat  bg-cover mx-auto"
+        className="main-container w-[100%] bg-no-repeat  bg-cover mx-auto "
       >
-        <div className=" flex items-center justify-evenly  mx-auto   bg-gray-800 opacity-[0.95] ">
-          <div className="image-container ml-12 ">
+        <div className=" flex items-center md:justify-evenly  mx-auto   bg-gray-800 opacity-[0.95] sm:flex-row flex-col  py-10  px-2 md:px-0  sm:justify-center">
+          <div className="image-container md:ml-12 w-[98%] mx-auto sm:w-fit">
             <img
-              className="w-[300px] max-w-none"
+              className=" sm:w-[160px] max-w-[400px] mx-auto block  w-[100%]  md:w-[220px] lg:w-[300px]"
               src={
                 poster_path
                   ? `https://image.tmdb.org/t/p/w300/${poster_path}`
@@ -65,23 +65,25 @@ const Movie = () => {
               alt={original_title}
             />
           </div>
-          <div className="details ml-4 h-[95%] px-24 py-0">
-            <h2 className="text-6xl font-extrabold mb-10 mt-8 text-red-700 ">
+          <div className="details sm:ml-4  lg:px-24 py-0   mx-auto max-w-[400px] lg:max-w-none md:max-w-none md:ml-0 md:px-5 ">
+            <h2 className=" font-extrabold md:mb-10 md:mt-8 text-red-700 lg:text-6xl text-2xl mt-1 md:text-4xl ">
               {original_title}
             </h2>
-            <p className="text-3xl font-bold my-5 ">
+            <p className="lg:text-3xl font-bold md:my-5 text-base my-1 md:text-xl ">
               <span>Release Date :</span> {release_date}
             </p>
-            <p className="text-3xl text-red-300 font-extrabold my-5 ">
+            <p className="lg:text-4xl text-red-500 font-extrabold md:my-5 text-xl my-1 md:text-2xl">
               "{tagline ? tagline : "no tagline"}"
             </p>
-            <p className="text-xl font-bold leading-10">{overview}</p>
-            <div className="button my-8">
+            <p className="text-base font-bold  max-w-[450px] md:text-text-base lg:text-2xl lg:max-w-none">
+              {overview}
+            </p>
+            <div className="button md:my-8 mb-8 mt-4">
               <Link
                 to={`/moviedetails/${movieID}/trailer`}
-                className="bg-red-700 hover:bg-red-500 active:bg-red-900 text-white text-center font-extrabold text-xl px-4 py-2  rounded-sm"
+                className="bg-red-700 hover:bg-red-500 active:bg-red-900 text-white text-center font-extrabold lg:text-xl lg:px-4 lg:py-2  rounded-sm text-sm px-2 py-1 md:text-base md:px-3 md:py-1 "
               >
-                <FaPlay className="inline-block pb-[5px]" /> Trailer
+                <FaPlay className="inline-block sm:pb-[5px] pb-[2px]" /> Trailer
               </Link>
             </div>
           </div>

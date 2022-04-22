@@ -23,7 +23,7 @@ const Movies = () => {
   return (
     <div>
       <Header />
-      <div className=" py-10">
+      <div className=" sm:py-10 pt-6 pb-10">
         {genres?.map((genre) => {
           return <Row key={genre?.id} id={genre?.id} genreName={genre?.name} />;
         })}

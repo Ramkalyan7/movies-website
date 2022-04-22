@@ -76,21 +76,21 @@ const Search = () => {
       <div className="mt-24">
         <form
           onSubmit={handleSubmit}
-          className="w-[80%] flex items-center justify-center mx-auto mt-36 mb-16"
+          className="sm:w-[80%]  flex items-center justify-center mx-auto mt-36 mb-16"
         >
           <input
             type="text"
             placeholder="Search"
-            className="px-3 py-2  w-[50%]   outline-none text-black rounded-3xl"
+            className="px-3 sm:py-2 py-1  sm:w-[50%] w-[60%]   outline-none text-black rounded-3xl"
             onChange={handleChange}
             value={input}
             name="query"
           />
           <button
             type="submit"
-            className="w-[15%] text-xl py-[0.4rem]  font-bold bg-red-400 hover:bg-red-600 active:bg-red-800 rounded-3xl -ml-8"
+            className="w-[80px] sm:text-xl text-base sm:py-[0.4rem] py-1  font-bold bg-red-400 hover:bg-red-600 active:bg-red-800 rounded-3xl -ml-8"
           >
-            <FaSearch className="inline mx-1 mb-[4px]" /> Search
+            <FaSearch className="inline mx-1 mb-[4px]" />
           </button>
         </form>
 
@@ -100,7 +100,8 @@ const Search = () => {
               return (
                 <div
                   ref={lastMovieOftheList}
-                  className="w-[15%] m-4 hover:scale-110 hover:border-2 hover:border-white transition-all active:border-red-800 active:border-4"
+                  className="w-[7.6rem] sm:m-3 lg:m-4 sm:w-[23%] m-2 lg:w-[15%]
+                hover:scale-110 hover:border-2 hover:border-white transition-all active:border-red-800 active:border-4"
                   key={id}
                 >
                   <Link to={`/moviedetails/${id}`}>
@@ -119,7 +120,8 @@ const Search = () => {
             } else {
               return (
                 <div
-                  className="w-[15%] m-4 hover:scale-110 hover:border-2 hover:border-white transition-all active:border-red-800 active:border-4"
+                  className="w-[7.6rem] sm:m-3 lg:m-4 sm:w-[23%] m-2 lg:w-[15%]
+                hover:scale-110 hover:border-2 hover:border-white transition-all active:border-red-800 active:border-4"
                   key={id}
                 >
                   <Link to={`/moviedetails/${id}`}>
@@ -142,11 +144,11 @@ const Search = () => {
           <img
             src={Loading}
             alt="loading..."
-            className="w-24 mx-auto block my-10"
+            className="w-[10%] mx-auto block my-10"
           />
         )}
         {error && (
-          <div className="text-3xl text-center my-8 text-red-800 font-bold">
+          <div className="text-2xl  text-center my-8 text-red-800 font-bold">
             {error.message}!
           </div>
         )}

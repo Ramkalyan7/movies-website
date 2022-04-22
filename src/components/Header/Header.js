@@ -45,39 +45,39 @@ const Header = () => {
   };
 
   return (
-    <div className="w-[90%] mx-auto mt-28">
+    <div className="sm:w-[90%] w-[100%] mx-auto mt-[69px] sm:mt-32">
       <div
         className="header bg-no-repeat bg-cover w-[100%] mx-auto"
         style={customStyles}
       >
         <div
-          className="m-auto text-left py-24 w-[100%] h-[95%]  px-10 bg-gray-900 box-border
-        opacity-[0.95]"
+          className="m-auto text-left   pt-7 pb-14  w-[100%] h-[95%]  px-3 bg-gray-900 box-border
+        opacity-[0.95] sm:py-24 "
         >
-          <h1 className="text-[5.7rem] text-red-600 font-extrabold">
+          <h1 className=" text-red-600 font-extrabold text-[2rem] sm:text-[3rem] lg:text-[5rem]">
             Welcome to Netflix
           </h1>
-          <p className="text-2xl font-bold my-7 w-[80%]">
+          <p className=" font-semibold my-7  sm:w-[80%] text-base sm:text-[1.4rem] lg:text-2xl">
             Watch world's most popular movies of all genres . Search the movie
             you want . Get all the details of the movie you want .
           </p>
           <form
             onSubmit={handleSubmit}
-            className="w-[80%] flex items-center justify-between mt-10"
+            className="sm:w-[80%] w-[100%] flex items-center  sm:mt-10 mt-8"
           >
             <input
               type="text"
               placeholder="Search"
-              className="px-3 py-2  w-[73%]  rounded-lg outline-none text-black"
+              className="   w-[70%] rounded-2xl outline-none text-black px-3 py-1 lg:py-2"
               onChange={handleChange}
               value={query}
               name="query"
             />
             <button
               type="submit"
-              className="w-[25%] text-2xl p-1  font-bold bg-red-600 rounded-md"
+              className="sm:w-[10%] w-[20%]    font-bold bg-red-600 rounded-2xl -ml-6 py-1 lg:py-2"
             >
-              <FaSearch className="inline mx-1 mb-[4px]" /> Search
+              <FaSearch className="inline mx-1 mb-[4px]" />{" "}
             </button>
           </form>
         </div>
