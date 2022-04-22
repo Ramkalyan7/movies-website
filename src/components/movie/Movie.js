@@ -4,6 +4,8 @@ import { Outlet, useParams, Link } from "react-router-dom";
 import Cast from "./cast/Cast";
 import Recommended from "./simmovies.js/Recommended";
 import { FaPlay } from "react-icons/fa";
+import bg from "../../Assets/logo.jpg";
+import Logo from "../../Assets/logo2.png";
 
 const Movie = () => {
   const [movie, setMovie] = useState({});
@@ -39,7 +41,9 @@ const Movie = () => {
   } = movie;
 
   const customStyles = {
-    backgroundImage: `url(https://image.tmdb.org/t/p/w500/${backdrop_path})`,
+    backgroundImage: backdrop_path
+      ? `url(https://image.tmdb.org/t/p/w500/${backdrop_path})`
+      : bg,
   };
   return (
     <div className="mt-[5.5rem]">
@@ -53,7 +57,11 @@ const Movie = () => {
           <div className="image-container ml-12 ">
             <img
               className="w-[300px] max-w-none"
-              src={`https://image.tmdb.org/t/p/w300/${poster_path}`}
+              src={
+                poster_path
+                  ? `https://image.tmdb.org/t/p/w300/${poster_path}`
+                  : Logo
+              }
               alt={original_title}
             />
           </div>

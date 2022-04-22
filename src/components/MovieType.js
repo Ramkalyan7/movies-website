@@ -114,7 +114,11 @@ const MovieType = () => {
                 <Link to={`/moviedetails/${id}`}>
                   <img
                     className="w-[100%] "
-                    src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+                    src={
+                      poster_path
+                        ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+                        : Logo
+                    }
                     alt=""
                   />
                 </Link>
@@ -124,7 +128,11 @@ const MovieType = () => {
         })}
       </div>
       {isLoading && (
-        <img src={Loading} alt="loading..." className="w-24 mx-auto block" />
+        <img
+          src={Loading}
+          alt="loading..."
+          className="w-24 mx-auto block my-10"
+        />
       )}
       {error && (
         <div className="text-3xl text-center my-8 text-red-800 font-bold">

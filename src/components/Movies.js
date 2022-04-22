@@ -8,10 +8,14 @@ const Movies = () => {
 
   useEffect(() => {
     const getGenre = async () => {
-      const response = await axios.get(
-        `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`
-      );
-      setGenres(response.data.genres);
+      try {
+        const response = await axios.get(
+          `https://api.themoviedb.org/3/genre/movie/list?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`
+        );
+        setGenres(response.data.genres);
+      } catch (error) {
+        console.log(error.message);
+      }
     };
     getGenre();
   }, []);

@@ -139,7 +139,11 @@ const Search = () => {
           })}
         </div>
         {isLoading && (
-          <img src={Loading} alt="loading..." className="w-24 mx-auto block" />
+          <img
+            src={Loading}
+            alt="loading..."
+            className="w-24 mx-auto block my-10"
+          />
         )}
         {error && (
           <div className="text-3xl text-center my-8 text-red-800 font-bold">

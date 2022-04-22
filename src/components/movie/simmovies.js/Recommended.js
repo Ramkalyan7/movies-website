@@ -50,13 +50,17 @@ const Recommended = ({ movie_ID, name }) => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
     const getCast = async () => {
-      if (movie_ID) {
-        const { data } = await axios.get(
-          `https://api.themoviedb.org/3/movie/${movie_ID}/${name.toLowerCase()}?api_key=${
-            process.env.REACT_APP_TMDB_API_KEY
-          }&language=en-US&page=1`
-        );
-        setMovies(data.results);
+      try {
+        if (movie_ID) {
+          const { data } = await axios.get(
+            `https://api.themoviedb.org/3/movie/${movie_ID}/${name.toLowerCase()}?api_key=${
+              process.env.REACT_APP_TMDB_API_KEY
+            }&language=en-US&page=1`
+          );
+          setMovies(data.results);
+        }
+      } catch (error) {
+        console.log(error.message);
       }
     };
     getCast();

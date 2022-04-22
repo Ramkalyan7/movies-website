@@ -50,11 +50,15 @@ const Cast = ({ movie_ID }) => {
   const [casts, setCasts] = useState([]);
   useEffect(() => {
     const getCast = async () => {
-      if (movie_ID) {
-        const { data } = await axios.get(
-          `https://api.themoviedb.org/3/movie/${movie_ID}/credits?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`
-        );
-        setCasts(data.cast);
+      try {
+        if (movie_ID) {
+          const { data } = await axios.get(
+            `https://api.themoviedb.org/3/movie/${movie_ID}/credits?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`
+          );
+          setCasts(data.cast);
+        }
+      } catch (error) {
+        console.log(error.message);
       }
     };
     getCast();

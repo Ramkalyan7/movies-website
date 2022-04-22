@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import bg from "../../Assets/logo.jpg";
 
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
@@ -14,16 +15,22 @@ const Header = () => {
 
   useEffect(() => {
     const getMovies = async () => {
-      const response = await axios.get(
-        `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=28&without_keywords=comedy&with_watch_monetization_types=flatrate`
-      );
-      setMovie(response.data.results[index]);
+      try {
+        const response = await axios.get(
+          `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1&with_genres=28&without_keywords=comedy&with_watch_monetization_types=flatrate`
+        );
+        setMovie(response.data.results[index]);
+      } catch (error) {
+        console.log(error.message);
+      }
     };
     getMovies();
   }, []);
 
   const customStyles = {
-    backgroundImage: `url(https://image.tmdb.org/t/p/w500/${movie?.backdrop_path})`,
+    backgroundImage: movie?.backdrop_path
+      ? `url(https://image.tmdb.org/t/p/w500/${movie?.backdrop_path})`
+      : `url(${bg})`,
   };
 
   const handleChange = (e) => {
@@ -61,7 +68,7 @@ const Header = () => {
             <input
               type="text"
               placeholder="Search"
-              className="px-3 py-2  w-[70%]  rounded-lg outline-none text-black"
+              className="px-3 py-2  w-[73%]  rounded-lg outline-none text-black"
               onChange={handleChange}
               value={query}
               name="query"

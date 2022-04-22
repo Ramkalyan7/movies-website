@@ -8,18 +8,22 @@ const Trailer = () => {
 
   useEffect(() => {
     const getVideo = async () => {
-      const { data } = await axios.get(
-        `https://api.themoviedb.org/3/movie/${movieID}/videos?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`
-      );
-      const video = data?.results?.find((video) => {
-        return (
-          video?.type === "Trailer" &&
-          video?.official &&
-          video.site === "YouTube"
+      try {
+        const { data } = await axios.get(
+          `https://api.themoviedb.org/3/movie/${movieID}/videos?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`
         );
-      });
+        const video = data?.results?.find((video) => {
+          return (
+            video?.type === "Trailer" &&
+            video?.official &&
+            video.site === "YouTube"
+          );
+        });
 
-      setTrailer(video?.key);
+        setTrailer(video?.key);
+      } catch (error) {
+        console.log(error.message);
+      }
     };
     getVideo();
   }, [movieID]);

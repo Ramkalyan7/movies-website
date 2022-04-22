@@ -9,10 +9,14 @@ const Person = () => {
 
   useEffect(() => {
     const getPerson = async () => {
-      const { data } = await axios.get(
-        `https://api.themoviedb.org/3/person/${castID}?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`
-      );
-      setPerson(data);
+      try {
+        const { data } = await axios.get(
+          `https://api.themoviedb.org/3/person/${castID}?api_key=${process.env.REACT_APP_TMDB_API_KEY}&language=en-US`
+        );
+        setPerson(data);
+      } catch (error) {
+        console.log(error.message);
+      }
     };
 
     getPerson();
@@ -46,7 +50,7 @@ const Person = () => {
               {person?.name}
             </h1>
 
-            <p className="mb-8  font-bold sm:text-2xl text-2xl leading-10">
+            <p className="mb-8  font-bold  text-xl leading-10">
               {person?.biography?.slice(0, 300)}....
             </p>
           </div>
