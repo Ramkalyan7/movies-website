@@ -46,7 +46,7 @@ const Movie = () => {
       : bg,
   };
   return (
-    <div className="md:mt-[5.5rem] mt-[69px]">
+    <div className="md:mt-[5.5rem] mt-[29px] sm:mt-[69px]">
       <Outlet />
 
       <div

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./Trailer.css";
 
 const Trailer = () => {
   const [trailer, setTrailer] = useState([]);
@@ -30,20 +31,20 @@ const Trailer = () => {
 
   return trailer ? (
     <div>
-      <div className="mx-auto mt-20 w-[40%] ">
+      <div className=" iframe-container">
         <iframe
-          width="500"
-          height="300"
+          width="560"
+          height="315"
           src={`https://www.youtube.com/embed/${trailer}?autoplay=1`}
+          title="YouTube video player"
           frameBorder="0"
-          allow="autoplay; encrypted-media"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-          title="video"
         />
       </div>
     </div>
   ) : (
-    <h1 className="my-32 text-5xl text-center text-red-500">
+    <h1 className="my-32 text-2xl text-center text-red-500">
       Sorry ! Trailer is not available
     </h1>
   );
