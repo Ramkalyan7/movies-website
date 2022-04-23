@@ -28,13 +28,13 @@ const Person = () => {
   };
 
   return (
-    <div>
+    <div className="">
       <section
-        className=" body-font mt-20 bg-no-repeat bg-cover w-[96%] mx-auto"
+        className=" body-font mt-20 bg-no-repeat bg-cover w-[96%] mx-auto h-[100vh] lg:h-auto "
         style={customStyle}
       >
-        <div className="container mx-auto flex px-5 bg-gray-800 py-8 md:flex-row flex-col items-center opacity-[0.8]">
-          <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+        <div className="container mx-auto flex max-w-none px-5 bg-gray-800 py-8 lg:flex-row flex-col items-center opacity-[0.8] h-[100vh] lg:h-auto w-[100%]">
+          <div className="lg:max-w-lg lg:w-full  w-5/6  mb-0">
             <img
               className="object-cover object-center rounded max-w-none w-[60%] mx-auto"
               alt="hero"
@@ -45,12 +45,12 @@ const Person = () => {
               }
             />
           </div>
-          <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
-            <h1 className="title-font sm:text-6xl text-3xl mb-8  font-extrabold text-red-600">
+          <div className="lg:flex-grow md:w-2/3 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center max-w-[280px] sm:max-w-none">
+            <h1 className="title-font sm:text-5xl text-3xl mb-8  font-extrabold text-red-600">
               {person?.name}
             </h1>
 
-            <p className="mb-8  font-bold  text-xl leading-10">
+            <p className="pb-8  font-semibold  text-base sm:text-xl ">
               {person?.biography?.slice(0, 300)}....
             </p>
           </div>

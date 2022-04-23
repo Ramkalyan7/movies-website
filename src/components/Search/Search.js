@@ -88,7 +88,7 @@ const Search = () => {
           />
           <button
             type="submit"
-            className="w-[80px] sm:text-xl text-base sm:py-[0.4rem] py-1  font-bold bg-red-400 hover:bg-red-600 active:bg-red-800 rounded-3xl -ml-8"
+            className="w-[50px] sm:text-xl text-base sm:py-[0.4rem] py-1  font-bold bg-red-400 hover:bg-red-600 active:bg-red-800 rounded-3xl -ml-8"
           >
             <FaSearch className="inline mx-1 mb-[4px]" />
           </button>

@@ -45,7 +45,7 @@ const Header = () => {
   };
 
   return (
-    <div className="sm:w-[90%] w-[100%] mx-auto mt-[69px] sm:mt-32">
+    <div className="w-[90%]  mx-auto mt-[69px] sm:mt-32">
       <div
         className="header bg-no-repeat bg-cover w-[100%] mx-auto"
         style={customStyles}
@@ -54,30 +54,32 @@ const Header = () => {
           className="m-auto text-left   pt-7 pb-14  w-[100%] h-[95%]  px-3 bg-gray-900 box-border
         opacity-[0.95] sm:py-24 "
         >
-          <h1 className=" text-red-600 font-extrabold text-[2rem] sm:text-[3rem] lg:text-[5rem]">
-            Welcome to Netflix
-          </h1>
-          <p className=" font-semibold my-7  sm:w-[80%] text-base sm:text-[1.4rem] lg:text-2xl">
-            Watch world's most popular movies of all genres . Search the movie
-            you want . Get all the details of the movie you want .
-          </p>
+          <div className="sm:ml-20">
+            <h1 className=" text-red-600 font-extrabold text-[2rem] sm:text-[3rem] lg:text-[5rem]">
+              Welcome to Netflix
+            </h1>
+            <p className=" font-semibold my-7  sm:w-[80%] text-base sm:text-[1.4rem] lg:text-2xl">
+              Watch world's most popular movies of all genres . Search the movie
+              you want . Get all the details of the movie you want .
+            </p>
+          </div>
           <form
             onSubmit={handleSubmit}
-            className="sm:w-[80%] w-[100%] flex items-center  sm:mt-10 mt-8"
+            className="sm:w-[80%] w-[100%] flex items-center  sm:mt-10 mt-8 sm:ml-20"
           >
             <input
               type="text"
               placeholder="Search"
-              className="   w-[70%] rounded-2xl outline-none text-black px-3 py-1 lg:py-2"
+              className="   w-[70%] rounded-2xl outline-none text-black px-3 py-1 lg:py-2 lg:rounded-3xl "
               onChange={handleChange}
               value={query}
               name="query"
             />
             <button
               type="submit"
-              className="sm:w-[10%] w-[20%]    font-bold bg-red-600 rounded-2xl -ml-6 py-1 lg:py-2"
+              className="w-[53.516px]    font-bold bg-red-600 rounded-2xl -ml-6 py-1 lg:py-2 lg:rounded-3xl lg:-ml-10 hover:bg-red-400 active:bg-red-800"
             >
-              <FaSearch className="inline mx-1 mb-[4px]" />{" "}
+              <FaSearch className="inline mx-1 mb-[4px] " />{" "}
             </button>
           </form>
         </div>

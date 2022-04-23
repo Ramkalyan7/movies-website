@@ -15,7 +15,7 @@ const Navbar = () => {
               </NavLink>
             </li>
           </div>
-          <div className="hidden">
+          <div className="">
             <div className="flex justify-center items-center ">
               <li className="mx-5 font-bold hover:border-b-2 hover:border-white text-gray-300 ">
                 <NavLink className="text-lg" to="/">

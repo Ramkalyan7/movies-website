@@ -80,7 +80,7 @@ const Row = ({ id, genreName }) => {
   }, [id]);
   return (
     <div className="mb-6">
-      <h1 className="sm:ml-14 ml-5  my-8  font-bold sm:text-4xl text-[2rem]">
+      <h1 className="sm:ml-14 ml-5  my-8  font-bold lg:text-4xl text-[1.5rem]">
         {genreName}
       </h1>
 

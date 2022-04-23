@@ -80,7 +80,7 @@ const MovieType = () => {
 
   return (
     <div className="py-24">
-      <h1 className="text-center my-9 font-bold text-4xl font-sans">
+      <h1 className="text-center my-9 font-bold  font-sans  lg:text-4xl text-[1.5rem]">
         {heading} Movies
       </h1>
       <div className=" flex flex-wrap items-center justify-around">
@@ -89,7 +89,8 @@ const MovieType = () => {
             return (
               <div
                 ref={lastMovieElement}
-                className="w-[15%] m-4 hover:scale-110 hover:border-2 hover:border-white transition-all active:border-red-800 active:border-4"
+                className="w-[7.6rem] sm:m-3 lg:m-4 sm:w-[23%] m-2 lg:w-[15%]
+                hover:scale-110 hover:border-2 hover:border-white transition-all active:border-red-800 active:border-4"
                 key={index}
               >
                 <Link to={`/moviedetails/${id}`}>
@@ -108,7 +109,8 @@ const MovieType = () => {
           } else {
             return (
               <div
-                className="w-[15%] m-4 hover:scale-110 hover:border-2 hover:border-white transition-all active:border-red-800 active:border-4"
+                className="w-[7.6rem] sm:m-3 lg:m-4 sm:w-[23%] m-2 lg:w-[15%]
+                hover:scale-110 hover:border-2 hover:border-white transition-all active:border-red-800 active:border-4"
                 key={index}
               >
                 <Link to={`/moviedetails/${id}`}>
