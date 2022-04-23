@@ -46,7 +46,7 @@ const Movie = () => {
       : bg,
   };
   return (
-    <div className="md:mt-[5.5rem] mt-[29px] sm:mt-[69px]">
+    <div className="md:mt-[5.5rem] mt-[69px]">
       <Outlet />
 
       <div
@@ -81,7 +81,7 @@ const Movie = () => {
             <div className="button md:my-8 mb-8 mt-4">
               <Link
                 to={`/moviedetails/${movieID}/trailer`}
-                className="bg-red-700 hover:bg-red-500 active:bg-red-900 text-white text-center font-extrabold lg:text-xl lg:px-4 lg:py-2  rounded-sm text-sm px-2 py-1 md:text-base md:px-3 md:py-1 "
+                className="bg-red-700 hover:bg-red-500 active:bg-red-900 text-white text-center font-extrabold lg:text-xl lg:px-4 lg:py-2  rounded-sm  px-3 text-base md:text-base md:px-3 md:py-1 py-2"
               >
                 <FaPlay className="inline-block sm:pb-[5px] pb-[2px]" /> Trailer
               </Link>
