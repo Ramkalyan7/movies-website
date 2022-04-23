@@ -100,7 +100,7 @@ const Search = () => {
               return (
                 <div
                   ref={lastMovieOftheList}
-                  className="w-[7.6rem] sm:m-3 lg:m-4 sm:w-[23%] m-2 lg:w-[15%]
+                  className="w-[10.6rem] sm:m-3 lg:m-4 sm:w-[23%] m-2 lg:w-[15%]
                 hover:scale-110 hover:border-2 hover:border-white transition-all active:border-red-800 active:border-4"
                   key={id}
                 >
@@ -120,7 +120,7 @@ const Search = () => {
             } else {
               return (
                 <div
-                  className="w-[7.6rem] sm:m-3 lg:m-4 sm:w-[23%] m-2 lg:w-[15%]
+                  className="w-[10.6rem] sm:m-3 lg:m-4 sm:w-[23%] m-2 lg:w-[15%]
                 hover:scale-110 hover:border-2 hover:border-white transition-all active:border-red-800 active:border-4"
                   key={id}
                 >
