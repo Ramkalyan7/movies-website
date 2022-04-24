@@ -7,7 +7,7 @@ const Sidebar = ({ visibility, setVisibility }) => {
     setVisibility(!visibility);
   };
   return (
-    <div className="fixed py-4 z-10 bg-gray-800 right-0 top-0 h-[100vh] w-[200px] pl-4 sm:w-[250px] sm:pl-8   sidebar">
+    <div className="fixed py-4 z-10 bg-gray-900 right-0 top-0 h-[100vh] w-[200px] pl-4 sm:w-[250px] sm:pl-8   sidebar">
       <nav>
         <ul>
           <div>

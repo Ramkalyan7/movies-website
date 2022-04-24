@@ -7,7 +7,7 @@ const Image = ({ imgUrl }) => {
         <img
           src={imgUrl}
           alt="moivieimage"
-          className="max-w-none sm:w-[98%] w-[83%] sm:pl-0 pl-4  rounded-lg     hover:scale-125  hover:z-10 hover:border-4 active:border-4 active:border-red-700 border-white transition-all"
+          className="max-w-none sm:w-[98%] w-[83%] sm:pl-0 ml-4  rounded-lg     hover:scale-125  hover:z-10 hover:border-4 active:border-4 active:border-red-700 border-white transition-all"
         />
       </div>
     </>
